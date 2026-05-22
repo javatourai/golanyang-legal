@@ -1,0 +1,39 @@
+:root {
+  --ink: #2e2b27;
+  --body: #45413b;
+  --muted: #8a847c;
+  --accent: #7c6cc4;
+  --line: #e9e5f2;
+  --bg: #faf9fc;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  font-family: "Apple SD Gothic Neo", "Malgun Gothic", system-ui, -apple-system,
+    BlinkMacSystemFont, sans-serif;
+  color: var(--body);
+  background: var(--bg);
+  line-height: 1.75;
+  -webkit-text-size-adjust: 100%;
+}
+.wrap { max-width: 720px; margin: 0 auto; padding: 44px 20px 72px; }
+h1 { font-size: 1.55rem; color: var(--ink); margin: 0 0 6px; }
+.sub { color: var(--muted); font-size: 0.9rem; margin: 0 0 8px; }
+h2 { font-size: 1.05rem; color: var(--ink); margin: 30px 0 6px; }
+p { margin: 6px 0; }
+ul { margin: 6px 0; padding-left: 20px; }
+li { margin: 4px 0; }
+a { color: var(--accent); }
+hr { border: 0; border-top: 1px solid var(--line); margin: 26px 0; }
+.back { display: inline-block; margin-bottom: 18px; font-size: 0.9rem; }
+footer { margin-top: 44px; padding-top: 18px; border-top: 1px solid var(--line);
+  color: var(--muted); font-size: 0.85rem; }
+/* index 랜딩 */
+.lead { font-size: 1rem; margin: 4px 0 26px; }
+.doc-link {
+  display: block; padding: 18px 20px; margin: 10px 0;
+  background: #fff; border: 1px solid var(--line); border-radius: 14px;
+  color: var(--ink); text-decoration: none; font-weight: 600;
+}
+.doc-link span { display: block; color: var(--muted); font-weight: 400;
+  font-size: 0.85rem; margin-top: 2px; }
