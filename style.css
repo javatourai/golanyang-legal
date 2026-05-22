@@ -1,39 +1,84 @@
 :root {
-  --ink: #2e2b27;
-  --body: #45413b;
-  --muted: #8a847c;
-  --accent: #7c6cc4;
-  --line: #e9e5f2;
-  --bg: #faf9fc;
+  --ink: #2e2b3a;       /* 제목·강조 텍스트 */
+  --body: #403c4a;      /* 본문 텍스트 (가독성 위해 앱보다 살짝 진하게) */
+  --muted: #6b6685;     /* 보조 텍스트 */
+  --accent: #c2607a;    /* 링크 — 골라냥 코랄 톤 */
 }
 * { box-sizing: border-box; }
 html, body { margin: 0; }
 body {
-  font-family: "Apple SD Gothic Neo", "Malgun Gothic", system-ui, -apple-system,
-    BlinkMacSystemFont, sans-serif;
+  font-family: "Gowun Dodum", "Apple SD Gothic Neo", "Malgun Gothic", system-ui,
+    -apple-system, sans-serif;
   color: var(--body);
-  background: var(--bg);
-  line-height: 1.75;
+  line-height: 1.8;
   -webkit-text-size-adjust: 100%;
+  min-height: 100vh;
+  /* 골라냥 앱과 동일한 라벤더 그라데이션 배경 */
+  background-color: #c9bce8;
+  background-image:
+    radial-gradient(at 18% 12%, #dcd0f2 0px, transparent 55%),
+    radial-gradient(at 82% 22%, #cfc0ec 0px, transparent 55%),
+    radial-gradient(at 28% 88%, #e0d3f5 0px, transparent 55%),
+    radial-gradient(at 78% 78%, #bdaee0 0px, transparent 55%),
+    linear-gradient(180deg, #d4c6ee 0%, #b6a5dc 100%);
+  background-attachment: fixed;
 }
-.wrap { max-width: 720px; margin: 0 auto; padding: 44px 20px 72px; }
-h1 { font-size: 1.55rem; color: var(--ink); margin: 0 0 6px; }
-.sub { color: var(--muted); font-size: 0.9rem; margin: 0 0 8px; }
-h2 { font-size: 1.05rem; color: var(--ink); margin: 30px 0 6px; }
+/* 반짝이 점 — 골라냥 앱과 동일한 시그니처 데코 */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(circle at 12% 16%, #ffffffcc 0 1.4px, transparent 2.4px),
+    radial-gradient(circle at 78% 30%, #ffffffaa 0 1.2px, transparent 2px),
+    radial-gradient(circle at 38% 70%, #ffffffcc 0 1.6px, transparent 2.6px),
+    radial-gradient(circle at 88% 82%, #ffffffaa 0 1.2px, transparent 2px),
+    radial-gradient(circle at 22% 90%, #ffffffaa 0 1.2px, transparent 2px),
+    radial-gradient(circle at 62% 10%, #ffffffaa 0 1.2px, transparent 2px);
+  background-size: 260px 260px;
+}
+.wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 46px 22px 76px;
+}
+h1 { font-size: 1.55rem; color: var(--ink); margin: 0 0 4px; font-weight: 800; }
+.sub { color: var(--muted); font-size: 0.88rem; margin: 0 0 14px; }
+h2 { font-size: 1.05rem; color: var(--ink); margin: 28px 0 6px; font-weight: 800; }
 p { margin: 6px 0; }
 ul { margin: 6px 0; padding-left: 20px; }
 li { margin: 4px 0; }
-a { color: var(--accent); }
-hr { border: 0; border-top: 1px solid var(--line); margin: 26px 0; }
-.back { display: inline-block; margin-bottom: 18px; font-size: 0.9rem; }
-footer { margin-top: 44px; padding-top: 18px; border-top: 1px solid var(--line);
-  color: var(--muted); font-size: 0.85rem; }
-/* index 랜딩 */
-.lead { font-size: 1rem; margin: 4px 0 26px; }
-.doc-link {
-  display: block; padding: 18px 20px; margin: 10px 0;
-  background: #fff; border: 1px solid var(--line); border-radius: 14px;
-  color: var(--ink); text-decoration: none; font-weight: 600;
+a { color: var(--accent); font-weight: 700; }
+.back { display: inline-block; margin-bottom: 16px; font-size: 0.9rem; }
+footer {
+  margin-top: 42px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  color: var(--muted);
+  font-size: 0.82rem;
 }
-.doc-link span { display: block; color: var(--muted); font-weight: 400;
-  font-size: 0.85rem; margin-top: 2px; }
+/* index 랜딩 */
+.lead { font-size: 1rem; margin: 4px 0 24px; color: var(--body); }
+.doc-link {
+  display: block;
+  padding: 18px 20px;
+  margin: 12px 0;
+  background: rgba(255, 255, 255, 0.74);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 18px;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 800;
+  box-shadow: 0 8px 20px rgba(120, 95, 170, 0.18);
+}
+.doc-link span {
+  display: block;
+  color: var(--muted);
+  font-weight: 500;
+  font-size: 0.84rem;
+  margin-top: 3px;
+}
